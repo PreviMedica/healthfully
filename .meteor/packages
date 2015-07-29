@@ -10,3 +10,4 @@ insecure
 momentjs:moment
 iron:router
 accounts-password
+dburles:collection-helpers

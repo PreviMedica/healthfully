@@ -1,0 +1,11 @@
+input, select {
+  font-size: 18px;
+}
+
+form {
+  margin: 50px;
+}
+
+form input {
+  display: block;
+}

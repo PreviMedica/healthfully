@@ -1,0 +1,15 @@
+<template name="makePairing">
+  <form>
+    <select name="client">
+      {{#each clientList}}
+      <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}}</option>
+      {{/each}}
+    </select>
+    <select name="provider">
+      {{#each providerList}}
+      <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}} {{profile.credential}}</option>
+      {{/each}}
+    </select>
+    <button type="submit">Pair</button>
+  </form>
+</template>
