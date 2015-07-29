@@ -1,5 +1,5 @@
 Template.registerClient.events({
-    'submit .register': function(event) {
+    'submit form': function(event) {
         event.preventDefault();
         var firstName = event.target.firstName.value;
         var lastName = event.target.lastName.value;
