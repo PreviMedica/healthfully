@@ -7,6 +7,7 @@ Template.registerProvider.events({
     var password = event.target.password.value;
     var credential = event.target.credential.value;
     var licenses = event.target.licenses.value;
+    var phone = event.target.phone.value;
     var street = event.target.street.value;
     var zip = event.target.zip.value;
     var state = event.target.state.value;
@@ -19,7 +20,8 @@ Template.registerProvider.events({
         licenses: licenses,
         street: street,
         zip: zip,
-        state: state
+        state: state,
+        phone: phone
       }
     }, function(error){
       if (error) {
