@@ -17,6 +17,9 @@ Template.makePairing.helpers({
     return Users.find({"profile.credential" : {$exists: false}});
   },
   providerList: function() {
-    return Users.find({"profile.credential" : {$exists: true} });
+    return Users.find({"profile.credential" : {$exists: true}});
+  },
+  pairings: function() {
+    // list pairings
   }
 });

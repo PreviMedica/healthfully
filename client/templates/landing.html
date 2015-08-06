@@ -1,0 +1,8 @@
+<template name="landing">
+  {{#if currentUser}}
+    <p>You're a user</p>
+    {{else}}
+      {{> registerClient}}
+      {{> registerProvider}}
+  {{/if}}
+</template>
