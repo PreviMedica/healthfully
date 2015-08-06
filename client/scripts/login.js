@@ -8,8 +8,8 @@ Template.login.events({
       if (e) {
         console.log(e);
       } else {
-      
+
       }
     });
   }
-})
+});

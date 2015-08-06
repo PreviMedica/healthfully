@@ -1,4 +1,5 @@
 <template name="schedule">
+{{#if isNotProvider}}
 <div>
   <h1>I'm the schedule</h1>
   <p>Paired with {{pairedWith.profile.firstName}} {{pairedWith.profile.lastName}} {{pairedWith.profile.credential}} Photo</p>
@@ -7,4 +8,7 @@
 
   <button>Start Session</button>
 </div>
+{{else}}
+  <h2>you are a provider</h2>
+{{/if}}
 </template>

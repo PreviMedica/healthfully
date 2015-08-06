@@ -4,5 +4,9 @@ Template.schedule.helpers({
     var providerId = Pairings.findOne({clientId: id}).providerId;
     return Users.findOne({_id: providerId});
 
-  }
+  },
+  isNotProvider: function() {
+    var id = Meteor.userId();
+    return Users.find({"profile.credential" : {$exists: false}});
+    }
 });
