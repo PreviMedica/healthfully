@@ -1,11 +1,7 @@
-input, select {
-  font-size: 18px;
+nav {
+  min-height: 100%;
 }
 
-form {
-  margin: 50px;
-}
-
-form input {
-  display: block;
+.nav-side li a {
+  dispay: block;
 }
