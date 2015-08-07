@@ -1,0 +1,49 @@
+<template name="onboard">
+    <h1>Your Health</h1>
+    <h3>So that we may provide the best and most personalized guidance possible, we would like to know about you and your overall health. Please complete this questionnaire for your PreviMedica nutrition expert to review prior to your first consultation. We ensure that all information provided will remain strictly confidential.</h3>
+    <form id="basic-information">
+        <label for="first-name">First Name</label>
+        <input type="text" name="first-name">
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last-name">
+        <label for="age">Age:</label>
+        <input type="number" name="age">
+        <label for="height">Height:</label>
+        <input type="number" name="height">
+        <label for="weight">Weight:</label>
+        <input type="number" name="weight">
+        <button type="submit">next</button>
+    </form>
+    <form id="weight-digestion">
+        <label for="weight-comfort">Do you feel comfortable with your current weight?</label>
+        <input type="radio" name="weight-comfort" value="yes">
+        <input type="radio" name="weight-control" value="no">
+        <label for="weight-goal">If no, what is your goal weight?</label>
+        <input type="text" name="weight-goal">
+        <label for="medical-conditions">Re-think this, how it should work, multiple inputs into an array</label>
+        <input type="text" name="medical-condiitons">
+        <label for="digestive-issues">Digestive issues (check all that apply):</label>
+        <input type="checkbox" name="digestive-issues" value="gas">
+        <input type="checkbox" name="digestive-issues" value="constipation">
+        <input type="checkbox" name="digestive-issues" value="diarrhea">
+        <input type="checkbox" name="digestive-issues" value="bloating">
+        <input type="checkbox" name="digestive-issues" value="acid_reflux">
+        <input type="checkbox" name="digestive-issues" value="nausea">
+        <label for="bowel-movements">How often do you have a bowel movement</label>
+        <input type="text" name="bowel-movement">
+        <button type="submit">next</button>
+    </form>
+    <form id="meds">
+      <label for="medications">Please provide the medication name, dosage, frequency and start date of any medications you are currently taking.</label>
+      <input type="medications">
+      <label for="supplements">Are you currently taking any dietary supplements? If so please provide the name, dosage, frequency and start date.</label>
+      <input type="text" name="supplements">
+    </form>
+    <form>
+      <label for="allergies">Do you have any food allergies? If so please list below:</label>
+      <input type="text" name="allergies">
+      <label for="md-diets">Has your physician presribed any special diet for you? If so please describe</label>
+      <input type="text" name="md-diets">
+      <button type="submit">next</button>
+    </form>
+</template>
