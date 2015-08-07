@@ -1,5 +1,6 @@
 <template name="nav">
   <nav>
+  {{#if currentUser}}
     <ul class="nav-side">
       <li><a href="{{pathFor 'schedule'}}">Schedule</a></li>
       <li><a href="{{pathFor 'profile'}}">Profile</a></li>
@@ -7,5 +8,7 @@
       <li><a href="{{pathFor 'admin'}}">Admin</a></li>
     </ul>
     <p class="logout">logout</p>
+  {{/if}}
+
   </nav>
 </template>
