@@ -1,8 +1,10 @@
 <template name="nav">
   <nav>
     <ul class="nav-side">
-      <li><a href="">Schedule</a></li>
-      <li><a href="">Profile</a></li>
+      <li><a href="{{pathFor 'schedule'}}">Schedule</a></li>
+      <li><a href="{{pathFor 'profile'}}">Profile</a></li>
+      <!-- set this as conditional, if admin then -->
+      <li><a href="{{pathFor 'admin'}}">Admin</a></li>
     </ul>
     <p class="logout">logout</p>
   </nav>
