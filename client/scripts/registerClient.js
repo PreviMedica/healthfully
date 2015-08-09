@@ -17,7 +17,15 @@ Template.registerClient.events({
             if (error) {
                 console.log(error);
             } else {
-                Router.go('dashboard')
+                Router.go('schedule');
+                var userId = Meteor.userId();
+                Docs.insert({
+                    userId: userId,
+                    basicInfo: null,
+                    weight: null,
+                    medications: null,
+                    other: null
+                });
             }
         });
     }
