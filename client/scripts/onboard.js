@@ -2,36 +2,49 @@ Template.onboard.helpers({
   onboardStatus: function() {
     var currentUser = Meteor.userId()
     var docs =  Docs.findOne({userId: currentUser});
-
     var form1 = document.getElementById('basic-information');
     var form2 = document.getElementById('weight-digestion');
     var form3 = document.getElementById('meds');
     var form4 = document.getElementById('allergies');
+    var orientation = document.getElementById('orientation');
+    var welcome = document.getElementById('welcome');
 
     switch (null) {
       case docs.basicInfo:
-        form1.style.visibility = "visible";
-        form2.style.visibility = "hidden";
-        form3.style.visibility = "hidden";
-        form4.style.visibility = "hidden";
+        form1.style.display = "block";
+        form2.style.display = "none";
+        form3.style.display = "none";
+        form4.style.display = "none";
+        orientation.style.display="none";
         break;
       case docs.weight:
-        form1.style.visibility = "hidden"
-        form2.style.visibility = "visible"
-        form3.style.visibility = "hidden"
-        form4.style.visibility = "hidden"
+        form1.style.display = "none";
+        form2.style.display = "block";
+        form3.style.display = "none";
+        form4.style.display = "none";
+        orientation.style.display="none";
         break;
       case docs.medications:
-        form1.style.visibility = "hidden"
-        form2.style.visibility = "hidden"
-        form3.style.visibility = "visible"
-        form4.style.visibility = "hidden"
+        form1.style.display = "none";
+        form2.style.display = "none";
+        form3.style.display = "block";
+        form4.style.display = "none";
+        orientation.style.display="none";
         break;
       case docs.other:
-        form1.style.visibility = "hidden"
-        form2.style.visibility = "hidden"
-        form3.style.visibility = "hidden"
-        form4.style.visibility = "visible"
+        form1.style.display = "none";
+        form2.style.display = "none";
+        form3.style.display = "none";
+        form4.style.display = "block";
+        orientation.style.display="none";
+        break;
+      default:
+        form1.style.display = "none";
+        form2.style.display = "none";
+        form3.style.display = "none";
+        form4.style.display = "none";
+        welcome.style.display = "none"
+        orientation.style.display="block";
         break;
     }
 
