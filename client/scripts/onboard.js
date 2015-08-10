@@ -104,5 +104,10 @@ Template.onboard.events({
       allergies, 
       mdDiets
       ]}});
+  },
+  'submit #pickTime': function() {
+    event.preventDefault();
+    // some time of DB insert
+    Router.go('/schedule');
   }
 });
