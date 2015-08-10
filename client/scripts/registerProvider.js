@@ -16,6 +16,8 @@ Template.registerProvider.events({
       email: email,
       password: password,
       profile: {
+        firstName: firstName,
+        lastName: lastName,
         credential: credential,
         licenses: licenses,
         street: street,
