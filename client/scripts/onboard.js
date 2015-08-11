@@ -58,9 +58,9 @@ Template.onboard.events({
     var height = event.target.height.value;
     var weight = event.target.weight.value;
     var currentUser = Meteor.userId();
-    var docId = Docs.findOne({userId: currentUser})._id
     
-    Docs.update(docId,{$set: {basicInfo: [age, height, weight]}});
+    
+    Meteor.call('updateBasicForm', currentUser, age, height, weight);
 
   },
   'submit #weight-digestion': function() {
@@ -71,39 +71,26 @@ Template.onboard.events({
     var digestiveIssues = event.target.digestiveIssues.value;
     var bowelMovements = event.target.bowelMovements.value;
     var currentUser = Meteor.userId();
-    var docId = Docs.findOne({userId: currentUser})._id;
-    
-    Docs.update(docId, {$set: {weight: [
-      weightComfort,
-      weightGoal,
-      conditions,
-      digestiveIssues,
-      bowelMovements
-      ]}});
-  },
+
+    Meteor.call('updateWeightDigestionForm', currentUser, weightComfort, weightGoal, conditions, digestiveIssues, bowelMovements);
+},
   'submit #meds': function() {
     event.preventDefault();
     var medications = event.target.medications.value;
     var supplements = event.target.supplements.value;
     var currentUser = Meteor.userId();
-    var docId = Docs.findOne({userId: currentUser})._id;
+    
+    Meteor.call('updateMedsForm', currentUser, medications, supplements);
 
-    Docs.update(docId, {$set: {medications: [
-      medications,
-      supplements,
-      ]}});
   },
   'submit #allergies': function() {
     event.preventDefault();
     var allergies = event.target.allergies.value;
     var mdDiets = event.target.mdDiets.value;
     var currentUser = Meteor.userId();
-    var docId = Docs.findOne({userId: currentUser})._id;
 
-    Docs.update(docId, {$set: {other: [
-      allergies, 
-      mdDiets
-      ]}});
+    Meteor.call('updateAllergiesForm', currentUser, allergies, mdDiets);
+
   },
   'submit #pickTime': function() {
     event.preventDefault();
