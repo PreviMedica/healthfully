@@ -8,6 +8,7 @@ Template.onboard.helpers({
     var form4 = document.getElementById('allergies');
     var orientation = document.getElementById('orientation');
     var welcome = document.getElementById('welcome');
+    var honorcode = document.getElementById('honorcode')
 
     switch (null) {
       case docs.basicInfo:
@@ -15,7 +16,8 @@ Template.onboard.helpers({
         form2.style.display = "none";
         form3.style.display = "none";
         form4.style.display = "none";
-        orientation.style.display="none";
+        orientation.style.display = "none";
+        honorcode.style.display = "none";
         break;
       case docs.weight:
         form1.style.display = "none";
@@ -23,6 +25,7 @@ Template.onboard.helpers({
         form3.style.display = "none";
         form4.style.display = "none";
         orientation.style.display="none";
+        honorcode.style.display = "none";
         break;
       case docs.medications:
         form1.style.display = "none";
@@ -30,13 +33,23 @@ Template.onboard.helpers({
         form3.style.display = "block";
         form4.style.display = "none";
         orientation.style.display="none";
+        honorcode.style.display = "none";
         break;
-      case docs.other:
+      case docs.allergies:
         form1.style.display = "none";
         form2.style.display = "none";
         form3.style.display = "none";
         form4.style.display = "block";
         orientation.style.display="none";
+        honorcode.style.display = "none";
+        break;
+      case docs.honorcode:
+        form1.style.display = "none";
+        form2.style.display = "none";
+        form3.style.display = "none";
+        form4.style.display = "block";
+        orientation.style.display="none";
+        honorcode.style.display = "none";
         break;
       default:
         form1.style.display = "none";
@@ -45,6 +58,7 @@ Template.onboard.helpers({
         form4.style.display = "none";
         welcome.style.display = "none"
         orientation.style.display="block";
+        honorcode.style.display = "none";
         break;
     }
 

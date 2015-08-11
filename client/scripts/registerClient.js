@@ -24,7 +24,9 @@ Template.registerClient.events({
                     basicInfo: null,
                     weight: null,
                     medications: null,
-                    other: null
+                    allergies: null,
+                    orientationTime: null,
+                    honorcode: null, 
                 });
             }
         });
