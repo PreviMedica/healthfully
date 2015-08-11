@@ -61,7 +61,9 @@ Template.onboard.helpers({
         honorcode.style.display = "none";
         break;
     }
-
+  },
+  orientationTime: function() {
+    //booked?
   }
 });
 
@@ -106,9 +108,36 @@ Template.onboard.events({
     Meteor.call('updateAllergiesForm', currentUser, allergies, mdDiets);
 
   },
+  'submit #honorcode-form': function() {
+    event.preventDefault();
+    var policy = event.target.noShowPolicy.value;
+    var currentUser = Meteor.userId();
+
+    Meteor.call('updateHonorcode', currentUser, policy);
+
+  },
   'submit #pickTime': function() {
     event.preventDefault();
-    // some time of DB insert
-    Router.go('/schedule');
+    var currentUser = Meteor.userId();
+
+    Meteor.call('updateOrientation', currentUser, times);
+  },
+  'click td': function(event) {
+    var time = event.target.parentElement.children[0].innerHTML
+    var node = event.target
+    var preferredDays = function() { 
+    for (var i = 0; node !== null ; i++) {
+      node = node.previousSibling;
+    }
+    var days = {
+      4 : 'Monday',
+      6 : 'Tuesday',
+      8 : 'Wednesday',
+      10 : 'Thursday',
+      12 : 'Friday'
+    }
+    console.log(days[i], time)
+
+  }();
   }
 });

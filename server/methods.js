@@ -29,10 +29,20 @@ Meteor.methods({
   updateAllergiesForm: function(currentUser, allergies, mdDiets) {
     var docId = Docs.findOne({userId: currentUser})._id;
 
-    Docs.update(docId, {$set: {other: [
+    Docs.update(docId, {$set: {allergies: [
       allergies, 
       mdDiets
       ]}});
+  },
+
+  updateHonorcode: function(currentUser, policy) {
+    var docId = Docs.findOne({userId: currentUser});
+
+    Docs.update(docId, {$set: {honorcode: policy}});
+  },
+
+  updateOrientation: function(currentUser, times) {
+    // Things
   },
 
   // Admin methods

@@ -1,7 +1,27 @@
-nav {
-  min-height: 100%;
+/* orientaiton time picker */
+.orientation-time {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
-.nav-side li a {
-  dispay: block;
+.orientation-time td {
+  height: 30px;
+  width: 60px;
+  max-width: 60px;
+  border-bottom: 1px solid #778899;
+}
+
+.orientation td:nth-child(n+1) {
+  background-color: black;
+  font-size: 30px;
+}
+
+.orientation-time td:hover {
+  background-color: lightblue;
+}
+
+/* selected time */
+.orientation-time .selected {
+ background-color : blue;
 }
