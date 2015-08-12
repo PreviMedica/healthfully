@@ -133,11 +133,6 @@ Template.onboard.events({
         Meteor.call('updateOrientation', currentUser, times);
     },
     'click td': function(event) {
-
-        var addPrefferedTimes = function() {
-
-        }
-
         var preferredTimes = function() {
             var array = [];
             var el = event.target.parentElement.children[0]
@@ -178,5 +173,10 @@ Template.onboard.events({
                 }
             }
         }();
+    },
+    'click .set-times': function() {
+      console.log(orientTime);
+      var currentUser = Meteor.userId()
+      Meteor.call('updateOrientationTimes', currentUser, orientTime);
     }
 });

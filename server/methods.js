@@ -41,8 +41,10 @@ Meteor.methods({
     Docs.update(docId, {$set: {honorcode: policy}});
   },
 
-  updateOrientation: function(currentUser, times) {
-    // Things
+  updateOrientationTimes: function(currentUser, orientTime) {
+    var docId = Docs.findOne({userId: currentUser})._id;
+
+    Docs.update(docId, {$set : {orientationTime: orientTime}});
   },
 
   // Admin methods
