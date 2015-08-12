@@ -28,8 +28,8 @@
 }
 
 /* selected time */
-.orientation-time .selected {
- background-color : blue;
+.orientation-time-selected {
+ background-color : #136194;
 }
 
 .orientation-time td:nth-child(1) {
