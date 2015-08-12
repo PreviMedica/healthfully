@@ -9,19 +9,31 @@
   height: 30px;
   width: 60px;
   max-width: 60px;
-  border-bottom: 1px solid #778899;
 }
 
-.orientation td:nth-child(n+1) {
-  background-color: black;
-  font-size: 30px;
+.orientation-time tr:nth-child(even) {
+  background-color: #d7d7d7;
+}
+
+.orientation-time tr:nth-child(odd) {
+  background-color: #EFEFEF;
+}
+
+.orientation-time tr:nth-child(1) {
+  height: 40px;
 }
 
 .orientation-time td:hover {
-  background-color: lightblue;
+  background-color: #3984B4;
 }
 
 /* selected time */
 .orientation-time .selected {
  background-color : blue;
 }
+
+.orientation-time td:nth-child(1) {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+

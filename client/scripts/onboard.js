@@ -9,6 +9,13 @@ Template.onboard.helpers({
     var orientation = document.getElementById('orientation');
     var welcome = document.getElementById('welcome');
     var honorcode = document.getElementById('honorcode')
+    var orientationTimes = [];
+
+    // reactive variable for storing orientatino time
+    // on client before inserting into Mongo
+    this.orientTime = new ReactiveVar;
+    orientTime = []
+
 
     switch (null) {
       case docs.basicInfo:
@@ -47,9 +54,10 @@ Template.onboard.helpers({
         form1.style.display = "none";
         form2.style.display = "none";
         form3.style.display = "none";
-        form4.style.display = "block";
+        form4.style.display = "none";
         orientation.style.display="none";
         honorcode.style.display = "none";
+        welcome.style.display = "none";
         break;
       default:
         form1.style.display = "none";
@@ -123,21 +131,43 @@ Template.onboard.events({
     Meteor.call('updateOrientation', currentUser, times);
   },
   'click td': function(event) {
-    var time = event.target.parentElement.children[0].innerHTML
-    var node = event.target
-    var preferredDays = function() { 
-    for (var i = 0; node !== null ; i++) {
-      node = node.previousSibling;
-    }
-    var days = {
-      4 : 'Monday',
-      6 : 'Tuesday',
-      8 : 'Wednesday',
-      10 : 'Thursday',
-      12 : 'Friday'
-    }
-    console.log(days[i], time)
 
-  }();
+    var addPrefferedTimes = function() {
+
+    }
+    
+    var preferredTimes = function() { 
+      var array = [];
+      var el = event.target.parentElement.children[0]
+      var time = event.target.parentElement.children[0].innerHTML;
+      var node = event.target;
+      
+      for (var i = 0; node !== null ; i++) {
+        node = node.previousSibling;
+      }
+
+      // key is based on position of child element
+      var days = {
+        4 : 'Monday',
+        6 : 'Tuesday',
+        8 : 'Wednesday',
+        10 : 'Thursday',
+        12 : 'Friday'
+      }
+
+      // ignore clicks on time column
+     
+      if (days[i] === undefined || orientTime.length === 3) {}
+      else if (orientTime.indexOf(days[i] + " " + time) !== -1) {
+        console.log('already picked');
+      } else {
+       
+       orientTime.push(days[i] + " " +  time)
+       
+       // change TD color to represent selection
+       event.target.style.background = "#136194";
+       console.log(orientTime)
+      }      
+   }();
   }
 });

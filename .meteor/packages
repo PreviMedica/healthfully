@@ -11,3 +11,4 @@ momentjs:moment
 iron:router
 accounts-password
 dburles:collection-helpers
+reactive-var
