@@ -1,55 +1,95 @@
 Meteor.methods({
-  // Client onboard methods
-  updateBasicForm: function(currentUser, age, height, weight) {
-    console.log(currentUser)
-    var docId = Docs.findOne({userId: currentUser})._id
-    Docs.update(docId,{$set: {basicInfo: [age, height, weight]}});
-  },
-  updateWeightDigestionForm: function(currentUser, weightComfort, weightGoal, conditions, digestiveIssues, bowelMovements) {
-    var docId = Docs.findOne({userId: currentUser})._id;
-    
-    Docs.update(docId, {$set: {weight: [
-      weightComfort,
-      weightGoal,
-      conditions,
-      digestiveIssues,
-      bowelMovements
-      ]}});
-  },
+    // Client onboard methods
+    updateBasicForm: function(currentUser, age, height, weight) {
+        console.log(currentUser)
+        var docId = Docs.findOne({
+            userId: currentUser
+        })._id
+        Docs.update(docId, {
+                $set: {
+                    basicInfo: [
+                        ["age", age],
+                        ["height", height],
+                        ["weight", weight]
+                    ]
+                }
+        });
+    },
+    updateWeightDigestionForm: function(currentUser, weightComfort, weightGoal, conditions, digestiveIssues, bowelMovements) {
+        var docId = Docs.findOne({
+            userId: currentUser
+        })._id;
 
-  updateMedsForm: function(currentUser, medications, supplements) {
-      var docId = Docs.findOne({userId: currentUser})._id;
+        Docs.update(docId, {
+            $set: {
+                weight: [
+                    ["Do you feel comfortable at your current weight?", weightComfort],
+                    ["What is your weight goal?", weightGoal],
+                    ["What medical conditions have you been diagnosed if any", conditions]
+                    ["Digestive Issues; check all that apply: ",digestiveIssues],
+                    ["Howoften do you have bowel movements?",bowelMovements]
+                ]
+            }
+        });
+    },
 
-      Docs.update(docId, {$set: {medications: [
-      medications,
-      supplements,
-      ]}});
-  },
+    updateMedsForm: function(currentUser, medications, supplements) {
+        var docId = Docs.findOne({
+            userId: currentUser
+        })._id;
 
-  updateAllergiesForm: function(currentUser, allergies, mdDiets) {
-    var docId = Docs.findOne({userId: currentUser})._id;
+        Docs.update(docId, {
+            $set: {
+                medications: [
+                    ["Current Medications", medications],
+                    ["Current Suppliments", supplements]
+                ]
+            }
+        });
+    },
 
-    Docs.update(docId, {$set: {allergies: [
-      allergies, 
-      mdDiets
-      ]}});
-  },
+    updateAllergiesForm: function(currentUser, allergies, mdDiets) {
+        var docId = Docs.findOne({
+            userId: currentUser
+        })._id;
 
-  updateHonorcode: function(currentUser, policy) {
-    var docId = Docs.findOne({userId: currentUser});
+        Docs.update(docId, {
+            $set: {
+                allergies: [
+                    ["Do you have any food allergies?", allergies],
+                    ["Has your physician recomended a special diet?",mdDiets]
+                ]
+            }
+        });
+    },
 
-    Docs.update(docId, {$set: {honorcode: policy}});
-  },
+    updateHonorcode: function(currentUser, policy) {
+        var docId = Docs.findOne({
+            userId: currentUser
+        });
 
-  updateOrientationTimes: function(currentUser, orientTime) {
-    var docId = Docs.findOne({userId: currentUser})._id;
+        Docs.update(docId, {
+            $set: {
+                honorcode: policy
+            }
+        });
+    },
 
-    Docs.update(docId, {$set : {orientationTime: orientTime}});
-  },
+    updateOrientationTimes: function(currentUser, orientTime) {
+        var docId = Docs.findOne({
+            userId: currentUser
+        })._id;
 
-  // Admin methods
-  pair: function() {
+        Docs.update(docId, {
+            $set: {
+                orientationTime: orientTime
+            }
+        });
+    },
+
+    // Admin methods
+    pair: function() {
 
 
-  }
+    }
 });
