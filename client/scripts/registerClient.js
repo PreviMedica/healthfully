@@ -25,6 +25,7 @@ Template.registerClient.events({
                     weight: null,
                     medications: null,
                     allergies: null,
+                    labinfo: null, 
                     orientationTime: null,
                     honorcode: null, 
                 });
