@@ -1,11 +1,14 @@
 Template.orientationinfo.helpers({
-    orientTime: function() {
-      // reactive variable for storing orientatino time
-      // on client before inserting into Mongo
-      this.orientTime = new ReactiveVar;
-      orientTime = []
+    orientTimes: function() {
       var orientationTimes = [];
     }
+});
+
+Template.orientationinfo.onCreated(function() {
+  // reactive variable for storing orientatino time
+  // on client before inserting into Mongo
+  this.orientTime = new ReactiveVar;
+  orientTime = [];
 });
 
 Template.orientationinfo.events({
@@ -28,16 +31,18 @@ Template.orientationinfo.events({
                 10: 'Thursday',
                 12: 'Friday'
             }
-
+            var str = days[i] + " " + time;
+            console.log(orientTime.indexOf(str), 'index before conditional');
             // ignore clicks on time column
-
-            if (days[i] === undefined) {} else if (orientTime.indexOf(days[i] + " " + time) !== -1) {
-                var itemToDelete = orientTime.indexOf(days[i] + " " + time);
-                orientTime.splice(itemToDelete, 1);
-                console.log(itemToDelete)
+            if (days[i] === undefined) {} else if (orientTime.indexOf(str) !== -1) {
+                var index = orientTime.indexOf(days[i] + " " + time);
+                orientTime.splice(index, 1);
                 event.target.classList.remove("orientation-time-selected");
+                console.log('here');
             } else {
+               console.log('there')
                 if (orientTime.length < 3) {
+                   
                     // add time to reactive var 
                     orientTime.push(days[i] + " " + time)
 
@@ -49,11 +54,18 @@ Template.orientationinfo.events({
                     console.log('max times selected');
                 }
             }
-        }();
+            console.log(orientTime);
+        };
     },
     'click .set-times': function() {
       console.log(orientTime);
       var currentUser = Meteor.userId()
       Meteor.call('updateOrientationTimes', currentUser, orientTime);
+    },
+    'submit #pickTime': function() {
+        event.preventDefault();
+        var currentUser = Meteor.userId();
+
+        Meteor.call('updateOrientation', currentUser, times);
     }
 });

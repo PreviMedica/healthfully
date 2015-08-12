@@ -1,20 +1,3 @@
-Template.onboard.helpers({
-    onboardStatus: function() {
-        var currentUser = Meteor.userId()
-        var docs = Docs.findOne({ userId: currentUser });
-        var form1 = document.getElementById('basic-information');
-        var form2 = document.getElementById('weight-digestion');
-        var form3 = document.getElementById('meds');
-        var form4 = document.getElementById('allergies');
-        var orientation = document.getElementById('orientation');
-        var welcome = document.getElementById('welcome');
-        var honorcode = document.getElementById('honorcode')
-        
-
-
-    }
-});
-
 Template.onboard.events({
     'submit #weight-digestion': function() {
         event.preventDefault();
@@ -53,10 +36,4 @@ Template.onboard.events({
         Meteor.call('updateHonorcode', currentUser, policy);
 
     },
-    'submit #pickTime': function() {
-        event.preventDefault();
-        var currentUser = Meteor.userId();
-
-        Meteor.call('updateOrientation', currentUser, times);
-    }
 });
