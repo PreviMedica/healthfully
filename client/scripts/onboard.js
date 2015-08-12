@@ -58,7 +58,7 @@ Template.onboard.helpers({
                 form3.style.display = "none";
                 form4.style.display = "none";
                 orientation.style.display = "none";
-                honorcode.style.display = "none";
+                honorcode.style.display = "block";
                 welcome.style.display = "none";
                 break;
             default:
