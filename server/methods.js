@@ -91,18 +91,21 @@ Meteor.methods({
         var docId = Docs.findOne({userId: currentUser})._id;
 
         Docs.update(docId, {
-            $set : {
-                "cholestrol" : cholestrol, 
-                "triglycerides" : triglycerides, 
-                "LDL" : ldl, 
-                "HDL" : hdl, 
-                "fasting_glucose" : fastingGlucose, 
-                "HbA1C" : hba1c, 
-                "CRP" : crp, 
-                "BPsystolic" : bpsystolic, 
-                "BPdiastolic" : bpdiastolic  
-        }});
-    }
+            $set : { 
+                labinfo: [
+                ["cholestrol", cholestrol], 
+                ["triglycerides",triglycerides], 
+                ["LDL", ldl], 
+                ["HDL", hdl], 
+                ["fasting_glucose", fastingGlucose], 
+                ["HbA1C", hba1c], 
+                ["CRP", crp], 
+                ["BPsystolic", bpsystolic], 
+                ["BPdiastolic", bpdiastolic]  
+        ]
+        }
+    })
+    },
 
     // Admin methods
     pair: function() {
