@@ -7,8 +7,8 @@
 
 .orientation-time td {
   height: 30px;
-  width: 60px;
-  max-width: 60px;
+  width: 40px;
+  max-width: 40px;
 }
 
 .orientation-time tr:nth-child(even) {
@@ -24,7 +24,8 @@
 }
 
 .orientation-time td:hover {
-  background-color: #3984B4;
+  background-color: #136194;
+  opacity: .5;
 }
 
 /* selected time */
