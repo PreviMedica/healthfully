@@ -9,7 +9,13 @@ Meteor.publish('docs', function(currentUser) {
 
 // Admin 
 Meteor.publish('clientRecords', function(currentUser) {
-  if (currentUser.profile.isAdmin) {
+  if (Users.findOne({_id: currentUser}).profile.isAdmin) {
      return Users.find();
+  }
+});
+
+Meteor.publish('clientDocs', function(currentUser) {
+  if (Users.findOne({_id: currentUser}).profile.isAdmin) {
+    return Docs.find();
   }
 });

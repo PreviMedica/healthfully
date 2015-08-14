@@ -10,5 +10,7 @@ Template.clientView.helpers({
 });
 
 Template.clientView.events({
-
+  'click h2': function() {
+    console.log(Router.current().params._id);
+  }
 });
