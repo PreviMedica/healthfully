@@ -108,8 +108,7 @@ Meteor.methods({
     },
 
     // Admin methods
-    pair: function() {
-
-
+    pair: function(client, providerId, providerTitle, role) {
+    Pairings.upsert({userId: client},{ $push: { pairings: { providerId: providerId, providerTitle: providerTitle, role: role }}});
     }
 });

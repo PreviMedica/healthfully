@@ -2,14 +2,14 @@ Template.makePairing.events({
   'submit form': function(event) {
     event.preventDefault();
     var client = event.target.client.value;
-    var provider = event.target.provider.value;
-    console.log(client, provider);
+    var providerId = event.target.provider.value;
+    // this is hacky
+    var providerTitle = event.target.provider.firstChild.nextSibling.nextSibling.innerHTML;
+    var role = event.target.role.value;
+    console.log(client, providerTitle);
 
-    Pairings.insert({
-      clientId: client,
-      providerId: provider
-    });
-  }
+    Meteor.call('pair', client, providerId, providerTitle, role);
+}
 });
 
 Template.makePairing.helpers({
@@ -20,6 +20,7 @@ Template.makePairing.helpers({
     return Users.find({"profile.credential" : {$exists: true}});
   },
   pairings: function() {
-    // list pairings
+    var userId = Router.current().params._id;
+    return Pairings.findOne({userId: userId}).pairings;
   }
 });

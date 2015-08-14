@@ -29,6 +29,10 @@ Template.registerClient.events({
                     orientationTime: null,
                     honorcode: null, 
                 });
+                Pairings.insert({
+                    userId: userId,
+                    pairedTo: []
+                });
             }
         });
     }

@@ -1,14 +1,30 @@
 <template name="makePairing">
+  <div>
+    <ul>
+    {{#each pairings}}
+      <li>{{providerTitle}} Role: {{role}}</li>
+    {{/each}}
+    </ul>
+  </div>
   <form>
+    <label for="client">Client:</label>
     <select name="client">
       {{#each clientList}}
       <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}}</option>
       {{/each}}
     </select>
+    <label for="provider">Provider:</label>
     <select name="provider">
       {{#each providerList}}
       <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}} {{profile.credential}}</option>
       {{/each}}
+    </select>
+    <label for="role">Role:</label>
+    <select name="role">
+      <option value="Nutrition">Nutrition</option>
+      <option value="Exercise">Exercise</option>
+      <option value="Culinary">Culinary</option>
+      <option value="Navigator">Navigator</option>
     </select>
     <button type="submit">Pair</button>
   </form>

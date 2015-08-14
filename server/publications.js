@@ -19,3 +19,9 @@ Meteor.publish('clientDocs', function(currentUser) {
     return Docs.find();
   }
 });
+
+Meteor.publish('clientPairings', function(currentUser) {
+  if (Users.findOne({_id: currentUser}).profile.isAdmin) {
+    return Pairings.find()
+  }
+});
