@@ -7,4 +7,31 @@
       <li>Mentor 2, Role</li>
     </ul>
   </section>
+  <section>
+    <h2>Health Questionnaire</h2>
+    <ul>
+      {{#each clientDocs.basicInfo}}
+        <li>{{[0]}}: {{[1]}}</li>
+      {{/each}}
+
+      {{#each clientDocs.weight}}
+        <li>{{[0]}}: {{[1]}}</li>
+      {{/each}}
+      {{#each clientDocs.medications}}
+        <li>{{[0]}}: {{[1]}}</li>
+      {{/each}}
+      {{#each clientDocs.allergies}}
+        <li>{{[0]}}: {{[1]}}</li>
+      {{/each}}
+
+      {{#each clientDocs.labinfo}}
+        <li>{{[0]}}: {{[1]}}</li>
+      {{/each}}
+      {{#each clientDocs.honorcode}}
+        <li>{{[0]}}: {{[1]}}</li>
+      {{/each}}
+      <li>{{clientDocs.orientationTime}}</li>
+      <li>{{clientDocs.honorcode}}</li>
+    </ul>
+  </section>
 </template>
