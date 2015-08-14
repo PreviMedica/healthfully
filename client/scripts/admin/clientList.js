@@ -3,3 +3,9 @@ Template.clientList.helpers({
     return Users.find();
   }
 });
+
+Template.clientList.events({
+  'click #client':function(e) {
+    console.log(e.target.dataset.id);
+  }
+});
