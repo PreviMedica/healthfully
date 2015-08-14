@@ -1,11 +1,9 @@
 Template.clientList.helpers({
   clients: function() {
-    return Users.find();
+    return Users.find({"profile.credential": {$exists: false}});
   }
 });
 
 Template.clientList.events({
-  'click #client':function(e) {
-    console.log(e.target.dataset.id);
-  }
+
 });
