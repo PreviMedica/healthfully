@@ -12,3 +12,4 @@ accounts-password
 dburles:collection-helpers
 reactive-var
 mrt:moment-timezone
+twbs:bootstrap
