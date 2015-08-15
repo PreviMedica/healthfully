@@ -48,11 +48,11 @@
 nav {
   min-height: 100%;
   height: 100%; 
-  background-color: blue;  
+  background-color: #136194;  
   position: fixed;
   width: 16.66666%;
-/*  position: fixed;*/
 }
+
 nav::after {
   clear: both;
 }
@@ -68,6 +68,7 @@ nav ul {
 nav li {
   text-decoration: none;
   color: #fff;
+  font-size: 2em;
   text-align: center;
 }
 

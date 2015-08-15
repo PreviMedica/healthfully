@@ -5,29 +5,39 @@
   </section>
   <section>
     <h2>Health Questionnaire</h2>
+    <h3>Basic</h3>
     <ul>
       {{#each clientDocs.basicInfo}}
         <li>{{[0]}}: {{[1]}}</li>
       {{/each}}
-
+    </ul>
+    <h3>Weight</h3>
+    <ul>
       {{#each clientDocs.weight}}
         <li>{{[0]}}: {{[1]}}</li>
       {{/each}}
+    </ul>
+    <h3>Medications</h3>
+    <ul>
       {{#each clientDocs.medications}}
         <li>{{[0]}}: {{[1]}}</li>
       {{/each}}
+    </ul>
+    <h3>Allergies</h3>
+    <ul>
       {{#each clientDocs.allergies}}
         <li>{{[0]}}: {{[1]}}</li>
       {{/each}}
-
+    </ul>
+    <h3>Labs</h3>
+    <ul>
       {{#each clientDocs.labinfo}}
         <li>{{[0]}}: {{[1]}}</li>
       {{/each}}
-      {{#each clientDocs.honorcode}}
-        <li>{{[0]}}: {{[1]}}</li>
-      {{/each}}
+    </ul>
+    <h3>Preferred Times</h3>
+    <ul>
       <li>{{clientDocs.orientationTime}}</li>
-      <li>{{clientDocs.honorcode}}</li>
     </ul>
   </section>
 </template>

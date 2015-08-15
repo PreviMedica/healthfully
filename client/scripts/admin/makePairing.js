@@ -1,7 +1,7 @@
 Template.makePairing.events({
   'submit form': function(event) {
     event.preventDefault();
-    var client = event.target.client.value;
+    var client = Router.current().params._id;
     var providerId = event.target.provider.value;
     // this is hacky
     var providerTitle = event.target.provider.firstChild.nextSibling.nextSibling.innerHTML;
@@ -15,6 +15,9 @@ Template.makePairing.events({
 Template.makePairing.helpers({
   clientList: function(){ 
     return Users.find({"profile.credential" : {$exists: false}});
+  },
+  currentClient: function() {
+    return Router.current().params._id;
   },
   providerList: function() {
     return Users.find({"profile.credential" : {$exists: true}});

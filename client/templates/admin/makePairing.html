@@ -6,13 +6,8 @@
     {{/each}}
     </ul>
   </div>
+    sanity check: {{currentClient}}
   <form>
-    <label for="client">Client:</label>
-    <select name="client">
-      {{#each clientList}}
-      <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}}</option>
-      {{/each}}
-    </select>
     <label for="provider">Provider:</label>
     <select name="provider">
       {{#each providerList}}
