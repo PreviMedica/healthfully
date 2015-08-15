@@ -1,8 +1,11 @@
 <template name="clientView">
-  <section>
+  <section class="client-view-head">
+    <div class="container">
     <h1>Client: {{client.profile.firstName}} {{client.profile.lastName}}</h1>
-      {{> makePairing}}
+    </div>
   </section>
+  <div class="container client-view">
+   {{> makePairing}}
   <section>
     <h2>Health Questionnaire</h2>
     <h3>Basic</h3>
@@ -40,4 +43,5 @@
       <li>{{clientDocs.orientationTime}}</li>
     </ul>
   </section>
+  </div>
 </template>

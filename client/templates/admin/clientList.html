@@ -1,5 +1,5 @@
 <template name="clientList">
-  <p>Clients: </p>  
+  <h2>Clients:</h2>
   {{#each clients}}
     <a href="{{pathFor 'clientView' _id=this._id }}"><p data-id="{{_id}}" id="client">{{profile.firstName}} {{profile.lastName}} </p></a>
   {{/each}}
