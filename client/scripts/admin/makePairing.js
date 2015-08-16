@@ -3,7 +3,7 @@ Template.makePairing.events({
     event.preventDefault();
     var client = Router.current().params._id;
     var providerId = event.target.provider.value;
-    // this is hacky
+    // this is fragile
     var providerTitle = event.target.provider.firstChild.nextSibling.nextSibling.innerHTML;
     var role = event.target.role.value;
     console.log(client, providerTitle);

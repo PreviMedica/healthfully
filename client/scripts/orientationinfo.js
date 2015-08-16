@@ -32,13 +32,11 @@ Template.orientationinfo.events({
                 12: 'Friday'
             }
             var str = days[i] + " " + time;
-            console.log(orientTime.indexOf(str), 'index before conditional');
             // ignore clicks on time column
             if (days[i] === undefined) {} else if (orientTime.indexOf(str) !== -1) {
                 var index = orientTime.indexOf(days[i] + " " + time);
                 orientTime.splice(index, 1);
                 event.target.classList.remove("orientation-time-selected");
-                console.log('here');
             } else {
                console.log('there')
                 if (orientTime.length < 3) {

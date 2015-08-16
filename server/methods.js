@@ -1,4 +1,7 @@
 Meteor.methods({
+
+    // simplify code into an updateform pattern, pass it an array
+    // question object {question: question, answer: answer}
     // Client onboard methods
     updateBasicForm: function(currentUser, age, height, weight) {
         console.log(currentUser)
@@ -27,7 +30,7 @@ Meteor.methods({
                     ["What is your weight goal?", weightGoal],
                     ["What medical conditions have you been diagnosed if any", conditions]
                     ["Digestive Issues; check all that apply: ",digestiveIssues],
-                    ["Howoften do you have bowel movements?",bowelMovements]
+                    ["How often do you have bowel movements?",bowelMovements]
                 ]
             }
         });

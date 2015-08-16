@@ -75,14 +75,25 @@ nav ul {
 
 nav li {
   text-decoration: none;
-  color: #fff;
+  position: relative;
   font-size: 1.8em;
   text-align: center;
   text-shadow: 0 2px 2px rgba(0,0,0,0.25);
 }
 
-nav a {
+nav a,
+nav a:visited,
+nav a:active,
+nav a:link {
+  position: relative;
+  text-decoration: none;
   color: #fff;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  left: 10px;
+  transition: left 10s ease;
 }
 
 nav .greeting {
@@ -91,9 +102,10 @@ nav .greeting {
   text-shadow: 0 2px 2px rgba(0,0,0,0.25);
 }
 
-nav a:hover {
+nav li a:hover {
   text-decoration: none;
 }
+
  .bottom-nav {
   position: absolute;
   bottom: 30px;
@@ -103,6 +115,7 @@ nav a:hover {
 .bottom-nav .logout {
   color: #fff;
   text-align: center;
+  cursor: pointer;
 }
 
  /********ADMIN*********/
@@ -119,10 +132,11 @@ nav a:hover {
   margin-top: 0;
   color: #fff;
   text-shadow: 0 2px 2px rgba(0,0,0,0.25);
+  padding-top: 10px;
 }
 
 .client-view {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 
