@@ -3,13 +3,19 @@ Template.makePairing.events({
     event.preventDefault();
     var client = Router.current().params._id;
     var providerId = event.target.provider.value;
-    // this is fragile
+    // this is fragile // this doesn't work.
     var providerTitle = event.target.provider.firstChild.nextSibling.nextSibling.innerHTML;
     var role = event.target.role.value;
-    console.log(client, providerTitle);
+    console.log(event.target.provider.);
 
-    Meteor.call('pair', client, providerId, providerTitle, role);
-}
+    // Meteor.call('pair', client, providerId, providerTitle, role);
+  },
+  'click .unpair': function() {
+    event.preventDefault();
+    var userId = Router.current().params._id;
+    var providerId = (this.providerId);
+    Meteor.call('unpair', userId, providerId);
+  }
 });
 
 Template.makePairing.helpers({
