@@ -1,13 +1,16 @@
 <template name="login">
-  <form>
-    <div class="input-field">
-      <label for="email">email</label>
-      <input type="email" name="email">
+    <div class="login-panel">
+    <h2>Login</h2>
+        <form>
+            <div class="input-field">
+                <label for="email">email</label>
+                <input type="email" name="email">
+            </div>
+            <div class="input-field">
+                <label for="password">password</label>
+                <input type="password" name="password">
+            </div>
+            <button type="submit">login</button>
+        </form>
     </div>
-    <div class="input-field">
-      <label for="password">password</label>
-      <input type="password"  name="password">
-    </div>
-    <button type="submit">login</button>
-  </form>
 </template>

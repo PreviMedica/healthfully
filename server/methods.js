@@ -110,6 +110,23 @@ Meteor.methods({
     })
     },
 
+    newClientDocsPairings: function(userId) {
+        Docs.insert({
+            userId: userId,
+            basicInfo: null,
+            weight: null,
+            medications: null,
+            allergies: null,
+            labinfo: null, 
+            orientationTime: null,
+            honorcode: null, 
+        });
+        Pairings.insert({
+            userId: userId,
+            pairedTo: []
+        });
+    },
+
     // Admin methods
     pair: function(client, providerId, providerTitle, role) {
     Pairings.upsert({userId: client},{ $push: { pairings: { providerId: providerId, providerTitle: providerTitle, role: role }}});

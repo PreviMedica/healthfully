@@ -19,20 +19,8 @@ Template.registerClient.events({
             } else {
                 Router.go('schedule');
                 var userId = Meteor.userId();
-                Docs.insert({
-                    userId: userId,
-                    basicInfo: null,
-                    weight: null,
-                    medications: null,
-                    allergies: null,
-                    labinfo: null, 
-                    orientationTime: null,
-                    honorcode: null, 
-                });
-                Pairings.insert({
-                    userId: userId,
-                    pairedTo: []
-                });
+                Meteor.call('newClientDocsPairings', userId);
+
             }
         });
     }

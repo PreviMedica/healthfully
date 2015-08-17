@@ -6,7 +6,7 @@ Template.makePairing.events({
     // this is fragile // this doesn't work.
     var providerTitle = event.target.provider.firstChild.nextSibling.nextSibling.innerHTML;
     var role = event.target.role.value;
-    console.log(event.target.provider.);
+    console.log(event.target.provider);
 
     // Meteor.call('pair', client, providerId, providerTitle, role);
   },

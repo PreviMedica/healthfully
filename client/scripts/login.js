@@ -8,7 +8,7 @@ Template.login.events({
       if (e) {
         console.log(e);
       } else {
-
+        Router.go('schedule');
       }
     });
   }

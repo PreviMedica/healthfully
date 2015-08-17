@@ -12,7 +12,7 @@
     <label for="provider">Provider:</label>
     <select name="provider">
       {{#each providerList}}
-      <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}} {{profile.credential}}</option>
+      <option name="{{profile.firstName}} {{profile.lastName}} {{profile.credential}}" value="{{_id}}">{{profile.firstName}} {{profile.lastName}} {{profile.credential}}</option>
       {{/each}}
     </select>
     <label for="role">Role:</label>
